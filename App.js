@@ -1,5 +1,6 @@
-// Suppose we have structure like : 
-{/* <div id = "parent">
+// Suppose we have structure like :
+{
+  /* <div id = "parent">
     <div id ="child1">
         <h1>Welcome1</h1>
         <h2>Welcome2</h2>
@@ -9,28 +10,29 @@
         <h2>React</h2>
     </div>
 
-</div> */}
+</div> */
+}
 
-
-const div = React.createElement(
-    "div",
-    {id: "parent"}, 
-   [ 
-    React.createElement("div", {id: "child1"}, [React.createElement("h1",{},"Welcome1"), React.createElement("h2",{},"Welcome2")]  ),
-    React.createElement("div", {id: "child2"}, [React.createElement("h1",{},"Javascript"), React.createElement("h2",{},"React")]  )
-   ]
-);
+import React from "react";
+import ReactDOM from "react-dom";
+const div = React.createElement("div", { id: "parent" }, [
+  React.createElement("div", { id: "child1" }, [
+    React.createElement("h1", {}, "Welcome1"),
+    React.createElement("h2", {}, "Welcome2"),
+  ]),
+  React.createElement("div", { id: "child2" }, [
+    React.createElement("h1", {}, "Javascript"),
+    React.createElement("h2", {}, "React"),
+  ]),
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(div);
 
-
-
-
 // const heading = React.createElement(
-//     "h1", 
+//     "h1",
 //     {
-//         id: "heading", 
+//         id: "heading",
 //         xyz:"abc"
 //     },
 //     "Welcome to React Development!"
